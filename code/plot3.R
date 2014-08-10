@@ -1,7 +1,7 @@
 # download and unzip it https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip
 
 library(data.table)
-DT = fread("../rprogramming/household_power_consumption.txt")
+DT = fread("../household_power_consumption.txt")
 
 library(sqldf)
 res <- sqldf("select * from DT where Date='1/2/2007' or Date='2/2/2007'")
@@ -18,5 +18,5 @@ par(new=TRUE)
 # Add legend at the top right corner
 legend("topright", lty=1, legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), col=c("black","red","blue"))
 
-dev.copy(png, file = "../ExData_Plotting1/figure/plot3.png")
+dev.copy(png, file = "../figure/plot3.png")
 dev.off()
