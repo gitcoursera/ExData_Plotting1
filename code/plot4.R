@@ -17,7 +17,7 @@ par(mar=c(4.1,4.1,4.1,1.1))
 plot(res$Date, res$Global_active_power, type="l", xlab="", ylab="Global Active Power")
 
 # 2) Energy sub metering graph
-ylim_value <- mean(as.numeric(res2$Sub_metering_1)) * 100
+ylim_value <- mean(as.numeric(res$Sub_metering_1)) * 100
 with(res, plot(Date, Sub_metering_1, type="l", xlab="", ylab="Energy sub metering", ylim=c(0,ylim_value)))
 par(new=TRUE)
 with(res, plot(Date, Sub_metering_2, type="l", xlab="", ylab="", col="red", axes=F, ylim=c(0,ylim_value)))

@@ -7,7 +7,7 @@ library(sqldf)
 res <- sqldf("select * from DT where Date='1/2/2007' or Date='2/2/2007'")
 res$Date <- strptime(paste(res$Date,res$Time), "%d/%m/%Y %H:%M:%S")
 
-ylim_value <- mean(as.numeric(res2$Sub_metering_1)) * 100
+ylim_value <- mean(as.numeric(res$Sub_metering_1)) * 100
 
 with(res, plot(Date, Sub_metering_1, type="l", xlab="", ylab="Energy sub metering", ylim=c(0,ylim_value)))
 par(new=TRUE)
